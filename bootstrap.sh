@@ -20,3 +20,6 @@ oba_full_url='http://nexus.onebusaway.org/service/local/artifact/maven/content?r
 curl $oba_full_url > oba_full.war
 
 ## gtfs-rt-dump
+gtfs_rt_dump_url='https://github.com/kurtraschke/gtfs-rt-dump/releases/download/gtfs-rt-dump-1.0/gtfs-rt-dump-1.0-withAllDependencies.jar'
+curl -L $gtfs_rt_dump_url > gtfs-rt-dump-1.0-withAllDependencies.jar
+

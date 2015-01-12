@@ -27,3 +27,8 @@ java -jar oba_full.war \
 # test some routes
 curl http://localhost:8080/api/where/agencies-with-coverage.json?key=web
 curl http://localhost:8080/api/where/routes-for-agency/666.json?key=web
+
+# gtfs-rt-dump
+vehloc_pb_url='https://data.texas.gov/api/file_data/PlHJDxPVnJinHu1jh-eQr-1YSYPLnxH6AjP1iFvz_IA?filename=VehLoc.pb'
+java -jar gtfs-rt-dump-1.0-withAllDependencies.jar --url $vehloc_pb_url
+
