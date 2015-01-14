@@ -14,7 +14,7 @@ java -Xmx1G -server -jar oba_full.war -build bundle.xml gtfs-bundle \
     -P distanceAlongShapeLibrary.maxDistanceFromStopToShapePoint=1000
 
 ## start the server
-vehloc_pb_url='https://data.texas.gov/api/file_data/PlHJDxPVnJinHu1jh-eQr-1YSYPLnxH6AjP1iFvz_IA?filename=VehLoc.pb'
+vehloc_pb_url='https://data.texas.gov/api/file_data/FIMhW19BoaBhaoCIZSG3G5CGSx2KiAH7TDJI2KRB-ms?filename=VehLoc.pb'
 java -jar oba_full.war \
     -webapp \
     -gtfsRealtimeVehiclePositionsUrl=$vehloc_pb_url \
@@ -29,6 +29,11 @@ curl http://localhost:8080/api/where/agencies-with-coverage.json?key=web
 curl http://localhost:8080/api/where/routes-for-agency/666.json?key=web
 
 # gtfs-rt-dump
-vehloc_pb_url='https://data.texas.gov/api/file_data/PlHJDxPVnJinHu1jh-eQr-1YSYPLnxH6AjP1iFvz_IA?filename=VehLoc.pb'
+vehloc_pb_url='https://data.texas.gov/api/file_data/FIMhW19BoaBhaoCIZSG3G5CGSx2KiAH7TDJI2KRB-ms?filename=VehLoc.pb'
 java -jar gtfs-rt-dump-1.0-withAllDependencies.jar --url $vehloc_pb_url
 
+# build one-bus-away war
+oba_path="${HOME}/dev/onebusaway-application-modules"
+cd $oba_path/onebusaway-quickstart && mvn clean
+cd $oba_path/onebusaway-quickstart && mvn package
+java -Xmx1G -server -jar $oba_path/onebusaway-quickstart/onebusaway-quickstart-assembly/target/onebusaway-quickstart-assembly-1.1.13-webapp.war -build -help

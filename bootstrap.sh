@@ -23,3 +23,27 @@ curl $oba_full_url > oba_full.war
 gtfs_rt_dump_url='https://github.com/kurtraschke/gtfs-rt-dump/releases/download/gtfs-rt-dump-1.0/gtfs-rt-dump-1.0-withAllDependencies.jar'
 curl -L $gtfs_rt_dump_url > gtfs-rt-dump-1.0-withAllDependencies.jar
 
+
+## create gtfs sqlite database
+# install dependencies
+virtualenv .env_py2
+source .env_py2/bin/activate
+pip install gtfsdb
+# do it
+source .env_py2/bin/activate
+py_create_db="
+import gtfsdb
+from gtfsdb.api import database_load
+
+GTFS_DB = 'gtfs.db'
+GTFS_DOWNLOAD_FILE = 'gtfs.zip'
+database_load(
+    filename=GTFS_DOWNLOAD_FILE,
+    batch_size=gtfsdb.config.DEFAULT_BATCH_SIZE,
+    schema=gtfsdb.config.DEFAULT_SCHEMA,
+    is_geospatial=gtfsdb.config.DEFAULT_IS_GEOSPATIAL,
+    tables=None,
+    url='sqlite:///{}'.format(GTFS_DB),
+)
+"
+python -c $py_create_db

@@ -1,2 +1,4 @@
 .DS_Store
 oba_full.war
+.env*
+*.db

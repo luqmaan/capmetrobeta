@@ -420,3 +420,9 @@ entity {
   }
 }
 ```
+
+### Add timestamp to VehiclePosition
+
+  // Moment at which the vehicle's position was measured. In POSIX time
+  // (i.e., number of seconds since January 1st 1970 00:00:00 UTC).
+  optional uint64 timestamp = 5;
