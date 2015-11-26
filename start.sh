@@ -36,4 +36,14 @@ java -jar gtfs-rt-dump-1.0-withAllDependencies.jar --url $vehloc_pb_url
 oba_path="${HOME}/dev/onebusaway-application-modules"
 cd $oba_path/onebusaway-quickstart && mvn clean
 cd $oba_path/onebusaway-quickstart && mvn package
+cp $oba_path/onebusaway-quickstart/onebusaway-quickstart-assembly/target/onebusaway-quickstart-assembly-1.1.13-webapp.war ~/dev/capmetrobeta
+
+# run one-bus-away war
+java -jar ~/dev/capmetrobeta/onebusaway-quickstart-assembly-1.1.13-webapp.war -webapp \
+    -gtfsRealtimeAlertsUrl="https://data.texas.gov/api/file_data/WUeIr4_ttCVmqLIPHSe6Wpfg3eN270AWG5gzmMQ9-wo?filename=alert.pb" \
+    -gtfsRealtimeTripUpdatesUrl="https://data.texas.gov/api/file_data/ov42V2k523aiiX6Y4mRZPH_jltFytycBQ_4YBJM2YVk?filename=VehLoc.pb" \
+    -gtfsRealtimeVehiclePositionsUrl="https://data.texas.gov/download/i5qp-g5fd/application/octet-stream" \
+    ~/dev/capmetrobeta/gtfs-bundle
+
+
 java -Xmx1G -server -jar $oba_path/onebusaway-quickstart/onebusaway-quickstart-assembly/target/onebusaway-quickstart-assembly-1.1.13-webapp.war -build -help
