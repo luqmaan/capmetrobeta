@@ -54,4 +54,5 @@ java -Xmx1G -server -jar oba_full.war -webapp gtfs-bundle
 ```
 curl http://localhost:8080/api/where/agencies-with-coverage.json?key=web
 curl http://localhost:8080/api/where/routes-for-agency/1.json?key=web
+http://localhost:8080/api/where/stops-for-location.json?key=web&lat=30.267153&lon=-97.743061
 ```
