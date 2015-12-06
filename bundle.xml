@@ -3,7 +3,6 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.springframework.org/schema/beans
   http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
-
     <bean id="gtfs-bundles" class="org.onebusaway.transit_data_federation.bundle.model.GtfsBundles">
         <property name="bundles">
             <list>
@@ -11,9 +10,7 @@
             </list>
         </property>
     </bean>
-
     <bean id="gtfsCapMetro" class="org.onebusaway.transit_data_federation.bundle.model.GtfsBundle">
         <property name="path" value="/Users/luqmaan/dev/capmetrobeta/gtfs.zip" />
     </bean>
-
 </beans>

@@ -16,7 +16,7 @@ vehloc_pb_url='https://data.texas.gov/api/file_data/PlHJDxPVnJinHu1jh-eQr-1YSYPL
 curl $vehloc_pb_url > gtfs-rt/VehLoc.pb
 
 ## oba war
-oba_full_url='http://nexus.onebusaway.org/service/local/artifact/maven/content?r=public&g=org.onebusaway&a=onebusaway-quickstart-assembly&c=webapp&e=war&v=1.1.13'
+oba_full_url='http://nexus.onebusaway.org/service/local/artifact/maven/content?r=public&g=org.onebusaway&a=onebusaway-quickstart-assembly&c=webapp&e=war&v=1.1.14'
 curl $oba_full_url > oba_full.war
 
 ## gtfs-rt-dump
