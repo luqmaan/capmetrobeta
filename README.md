@@ -46,7 +46,11 @@ java -Xmx1G -server -jar oba_full.war -build bundle.xml gtfs-bundle \
     -P distanceAlongShapeLibrary.localMinimumThreshold=50 \
     -P distanceAlongShapeLibrary.maxDistanceFromStopToShapePoint=1000
 
-java -Xmx1G -server -jar oba_full.war -webapp gtfs-bundle
+java -Xmx1G -server -jar oba_full.war -webapp \
+    -gtfsRealtimeAlertsUrl="https://data.texas.gov/download/nusn-7fcn/application/octet-stream" \
+    -gtfsRealtimeTripUpdatesUrl="https://data.texas.gov/download/rmk2-acnw/application/octet-stream" \
+    -gtfsRealtimeVehiclePositionsUrl="https://data.texas.gov/download/eiei-9rpf/application/octet-stream" \
+    gtfs-bundle
 ```
 
 ## Test it works

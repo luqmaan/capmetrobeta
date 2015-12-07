@@ -39,10 +39,10 @@ cd $oba_path/onebusaway-quickstart && mvn package
 cp $oba_path/onebusaway-quickstart/onebusaway-quickstart-assembly/target/onebusaway-quickstart-assembly-1.1.13-webapp.war ~/dev/capmetrobeta
 
 # run one-bus-away war
-java -jar ~/dev/capmetrobeta/onebusaway-quickstart-assembly-1.1.13-webapp.war -webapp \
-    -gtfsRealtimeAlertsUrl="https://data.texas.gov/api/file_data/WUeIr4_ttCVmqLIPHSe6Wpfg3eN270AWG5gzmMQ9-wo?filename=alert.pb" \
-    -gtfsRealtimeTripUpdatesUrl="https://data.texas.gov/api/file_data/ov42V2k523aiiX6Y4mRZPH_jltFytycBQ_4YBJM2YVk?filename=VehLoc.pb" \
-    -gtfsRealtimeVehiclePositionsUrl="https://data.texas.gov/download/i5qp-g5fd/application/octet-stream" \
+java -jar ~/dev/capmetrobeta/onebusaway-quickstart-assembly-1.1.14-webapp.war -webapp \
+    -gtfsRealtimeAlertsUrl="https://data.texas.gov/download/nusn-7fcn/application/octet-stream" \
+    -gtfsRealtimeTripUpdatesUrl="https://data.texas.gov/download/rmk2-acnw/application/octet-stream" \
+    -gtfsRealtimeVehiclePositionsUrl="https://data.texas.gov/download/eiei-9rpf/application/octet-stream" \
     ~/dev/capmetrobeta/gtfs-bundle
 
 
